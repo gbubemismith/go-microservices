@@ -1,7 +1,6 @@
 package domain
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -13,8 +12,9 @@ var (
 
 func GetUser(userId int64) (*User, error) {
 	if user := users[userId]; user != nil {
+		fmt.Println("Here 1")
 		return user, nil
 	}
 
-	return nil, errors.New(fmt.Sprintf("user %v was not found", userId))
+	return nil, fmt.Errorf("user %v was not found", userId)
 }
