@@ -15,7 +15,6 @@ var (
 
 func GetUser(userId int64) (*User, *utils.ApplicationError) {
 	if user := users[userId]; user != nil {
-		fmt.Println("Here 1")
 		return user, nil
 	}
 
